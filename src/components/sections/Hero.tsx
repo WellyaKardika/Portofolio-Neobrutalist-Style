@@ -1,6 +1,7 @@
 "use client";
 import React from 'react';
 import Image from 'next/image';
+import profilePic from '../../../public/image/profile.webp';
 import { motion } from 'motion/react';
 import { ArrowRight, Download, Send, CheckCircle2, Award, Briefcase, FileText } from 'lucide-react';
 
@@ -95,10 +96,8 @@ export default function Hero({ onNavigate }: HeroProps) {
             {/* Real photo from user metadata layout */}
             <div className="relative overflow-hidden border-4 border-black dark:border-white rounded-xl bg-white dark:bg-zinc-900 aspect-square">
               <Image 
-                src="/image/profile.webp" 
+                src={profilePic} 
                 alt="Rachel Graceya Emanuella" 
-                width={500}
-                height={500}
                 priority
                 className="w-full h-full object-cover grayscale-25 group-hover:grayscale-0 transition-all duration-300"
               />

@@ -15,6 +15,12 @@ import {
 import { PROJECTS } from '@/data/projects';
 import Navbar from '@/components/ui/Navbar';
 
+export async function generateStaticParams() {
+  return PROJECTS.map((project) => ({
+    id: project.id,
+  }));
+}
+
 // ─── Types ──────────────────────────────────────────────────────────────────
 interface PageProps {
   params: Promise<{ id: string }>;

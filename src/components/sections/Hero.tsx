@@ -27,7 +27,8 @@ export default function Hero({ onNavigate }: HeroProps) {
       <div className="absolute top-1/2 right-32 w-12 h-12 bg-brand-tertiary border-4 border-black rounded-full z-0 animate-pulse"></div> */}
 
       {/* Grid Pattern Mesh */}
-      <div className="absolute inset-0 opacity-5 dark:opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(#000000 1.5px, transparent 1.5px)', backgroundSize: '24px 24px' }}></div>
+      <div className="absolute inset-0 opacity-5 dark:hidden pointer-events-none" style={{ backgroundImage: 'radial-gradient(#000000 1.5px, transparent 1.5px)', backgroundSize: '24px 24px' }}></div>
+      <div className="absolute inset-0 hidden dark:block opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(#ffffff 1.5px, transparent 1.5px)', backgroundSize: '24px 24px' }}></div>
 
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         {/* Left Column: Introductions and copy */}
@@ -39,9 +40,9 @@ export default function Hero({ onNavigate }: HeroProps) {
           </div>
 
           <h1 className="text-4xl md:text-6xl font-black font-sans text-black dark:text-white leading-tight tracking-tight uppercase">
-            I'm <br className="hidden md:inline" />Asep Sukadi <br className="hidden md:inline" />
+            I'm <br className="hidden md:inline" />Rachel Graceya<br className="hidden md:inline" />
             <span className="bg-brand-secondary dark:bg-zinc-800 text-black dark:text-brand-secondary border-4 border-black dark:border-brand-secondary px-3 py-1 inline-block transform rotate-1 mt-1 rounded-lg">
-              Ebolllll
+              Emanuella
             </span>
           </h1>
 

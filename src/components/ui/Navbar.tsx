@@ -73,10 +73,10 @@ export default function Navbar({ isDarkMode, onToggleDarkMode, onNavigate }: Nav
             className="flex items-center gap-2 group cursor-pointer hover:scale-105 active:scale-95 transition-transform"
           >
             <div className="w-10 h-10 border-4 border-black flex items-center justify-center rounded-lg bg-[#FFC900] font-black font-mono text-lg rotate-[-3deg] brutal-shadow-sm group-hover:rotate-[3deg] transition-transform">
-              AE
+              RG
             </div>
             <span className={`mx-3 font-black tracking-tighter uppercase text-black dark:text-white transition-all duration-300 ${isScrolled && !isMenuOpen ? 'text-lg' : 'text-xl'}`}>
-              Asep Ebol
+              Rachel Graceya
             </span>
           </button>
   

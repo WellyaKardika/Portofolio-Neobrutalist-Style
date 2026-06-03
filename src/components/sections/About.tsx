@@ -67,7 +67,8 @@ export default function About() {
       className="py-20 px-4 md:px-8 bg-[#FAF9F6] dark:bg-zinc-950 border-b-4 border-black dark:border-white relative transition-colors duration-200 overflow-hidden"
     >
       {/* Dynamic background items */}
-      <div className="absolute inset-0 opacity-5 dark:opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(#000000 2px, transparent 2px)', backgroundSize: '32px 32px' }}></div>
+      <div className="absolute inset-0 opacity-5 dark:hidden pointer-events-none" style={{ backgroundImage: 'radial-gradient(#000000 2px, transparent 2px)', backgroundSize: '32px 32px' }}></div>
+      <div className="absolute inset-0 hidden dark:block opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(#ffffff 2px, transparent 2px)', backgroundSize: '32px 32px' }}></div>
 
       <div className="max-w-4xl mx-auto relative z-10">
         {/* Main Bio Card */}
@@ -188,10 +189,6 @@ export default function About() {
                   <motion.div
                     key={`skeleton-${idx}`}
                     layout
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.9 }}
-                    transition={{ duration: 0.2 }}
                     className="p-3 border-4 border-black dark:border-white bg-zinc-50 dark:bg-zinc-900 rounded-lg flex flex-col gap-2 animate-pulse"
                   >
                     <div className="flex justify-between items-center">
@@ -210,10 +207,6 @@ export default function About() {
                   <motion.div 
                     key={skill.name} 
                     layout
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.9 }}
-                    transition={{ duration: 0.3 }}
                     className="p-3 border-4 border-black dark:border-white bg-zinc-50 dark:bg-zinc-900 rounded-lg shadow-sm flex flex-col gap-2 relative group hover:scale-[1.01] transition-transform"
                   >
                     <div className="flex justify-between items-center">
@@ -230,10 +223,12 @@ export default function About() {
 
                     {/* Progress bar with standard neobrutalist stroke */}
                     <div className="w-full h-4 bg-white dark:bg-zinc-800 border-4 border-black dark:border-white rounded-full overflow-hidden relative">
-                      <div 
-                        className="h-full bg-brand-primary border-r-4 border-black transition-all duration-500 ease-out"
-                        style={{ width: `${skill.level}%` }}
-                      ></div>
+                      <motion.div 
+                        className="h-full bg-brand-primary border-r-4 border-black"
+                        initial={{ width: 0 }}
+                        animate={{ width: `${skill.level}%` }}
+                        transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
+                      ></motion.div>
                     </div>
                   </motion.div>
                 ))

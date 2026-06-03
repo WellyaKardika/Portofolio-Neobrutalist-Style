@@ -66,7 +66,8 @@ export default function Contact() {
       className="py-24 px-4 bg-[#FF90E8] dark:bg-zinc-900 border-b-4 border-black text-center relative overflow-hidden transition-colors duration-200"
     >
       {/* Dynamic background accents */}
-      <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(#000000 2px, transparent 2px)', backgroundSize: '32px 32px' }}></div>
+      <div className="absolute inset-0 opacity-10 dark:hidden pointer-events-none" style={{ backgroundImage: 'radial-gradient(#000000 2px, transparent 2px)', backgroundSize: '32px 32px' }}></div>
+      <div className="absolute inset-0 hidden dark:block opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(#ffffff 2px, transparent 2px)', backgroundSize: '32px 32px' }}></div>
 
       <div className="max-w-3xl mx-auto relative z-10 text-left">
         {!submittedData ? (

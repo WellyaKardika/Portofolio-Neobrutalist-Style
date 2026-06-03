@@ -6,7 +6,7 @@ export const STATS: StatItem[] = [
     value: '3+',
     label: 'Years Exp.',
     colorClass: 'bg-brand-primary',
-    hoverColorClass: 'hover:bg-brand-accent dark:hover:bg-yellow-400',
+    hoverColorClass: 'hover:hover:bg-yellow-400 dark:hover:bg-yellow-400',
     detailedText: 'Full hands-on experience in corporate business analytical structures & engineering responsive front-ends.'
   },
   {

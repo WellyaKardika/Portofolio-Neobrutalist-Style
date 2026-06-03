@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from 'react';
+import { motion } from 'motion/react';
 import { Send, CheckCircle, Key, Mail, Calendar, ShieldCheck, Ticket } from 'lucide-react';
 
 export default function Contact() {
@@ -56,9 +57,13 @@ export default function Contact() {
   };
 
   return (
-    <section 
+    <motion.section 
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
       id="contact" 
-      className="py-24 px-4 bg-brand-primary dark:bg-yellow-400 border-b-4 border-black text-center relative overflow-hidden transition-colors duration-200"
+      className="py-24 px-4 bg-[#FF90E8] dark:bg-zinc-900 border-b-4 border-black text-center relative overflow-hidden transition-colors duration-200"
     >
       {/* Dynamic background accents */}
       <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(#000000 2px, transparent 2px)', backgroundSize: '32px 32px' }}></div>
@@ -228,8 +233,6 @@ export default function Contact() {
           </div>
         )}
       </div>
-    </section>
+    </motion.section>
   );
 }
-
-

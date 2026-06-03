@@ -33,6 +33,11 @@ export interface Project {
     label: string;
     url: string;
   }[];
+  // Extended fields for dedicated detail page (from V2 layout)
+  year?: string;
+  role?: string;
+  liveUrl?: string;
+  gallery?: string[];
 }
 
 export interface StatItem {

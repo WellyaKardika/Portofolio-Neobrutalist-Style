@@ -1,4 +1,4 @@
-import { Project, StatItem, SkillItem, TimelineItem, TestimonialItem } from '@/lib/types';
+import { Project } from '@/lib/types';
 
 export const PROJECTS: Project[] = [
   {
@@ -6,6 +6,10 @@ export const PROJECTS: Project[] = [
     title: 'E-commerce Optimization',
     tag: 'User Journey Analytics',
     category: 'analysis',
+    year: '2024',
+    role: 'Business Analyst',
+    liveUrl: 'https://github.com/WellyaKardika',
+    gallery: [],
     description: 'Comprehensive analysis of user journeys leading to a 24% increase in conversion rates through targeted UI/UX interventions.',
     about: 'A meticulous, data-driven optimization project for a scale-up retail platform. By capturing detailed user clickstream events, custom event tracking, and customer checkout funnels, Rachel identified friction-heavy elements directly within the check-out experience and payment choices.',
     image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuA1C0KaXxrgOdFG8KuUDih_tgI6Dsa8zukStirWM804SG9q8-RUms8klItdxWphF9n6XxAh5KHwb0k4mWeEJrrHBGXkk46IIyzm5-bCX9MC19swVNmaLG-Xgc75DrcMsGU5p1ECimE-ohiD2_CQ_MrfetMeA7cRdYgyulQudUPFRie3NtIEkXwiwMzeqAsrZD2CcLUlOOZUSIkCz7wfTU3kk-AebfAQt1m_nXS89v6tFuQVtYh-Olcp0h9Y2t2T4VoxpimNyTYvd7A',
@@ -40,6 +44,10 @@ export const PROJECTS: Project[] = [
     title: 'Market Entry Strategy',
     tag: 'TAM Modeling & Roadmap',
     category: 'strategy',
+    year: '2023',
+    role: 'Business Development',
+    liveUrl: 'https://github.com/WellyaKardika',
+    gallery: [],
     description: 'Developed a go-to-market strategy for a fintech startup, including competitor analysis and feature prioritization.',
     about: 'Constructed an elaborate, step-by-step launch methodology for an upcoming neo-investment startup expanding into maritime/cross-border digital deposits in Southeast Asia. This involved extensive modeling of direct regulatory ceilings, barrier definitions, and product features.',
     image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuC48Q2J-FQXNRl9vPWecyIjDIxKCyJOgyX8HYU26GI08MntyZ0qJYXgMMWjf32in3HT7-frm2n0SseXNFL_Zmaj2LCy-co5obvOcEPISimPqElIs-jScO52Itg3pP1gAPc4ILSmlaphzn78toGCoj-SDDMf_O_kE8ZesiJCKyU03cBV4A_4LOq5pSB_iK9qEpRfhjCzyUjKhd_N-6I0ELEzym4yi0TuzJLq-Jr4tRK2R9MNOj1pxO0QhoFnGbAUx8w7gJq8e8ehOTI',
@@ -73,6 +81,10 @@ export const PROJECTS: Project[] = [
     title: 'Internal Dashboard Dev',
     tag: 'Custom Operational Tooling',
     category: 'development',
+    year: '2024',
+    role: 'Business Analyst & Developer',
+    liveUrl: 'https://github.com/WellyaKardika',
+    gallery: [],
     description: 'Architected and built a custom analytics dashboard to streamline reporting processes for cross-functional teams.',
     about: 'Faced with multiple disconnected APIs and fragmented team logs, Rachel consolidated metrics into a customized, high-frequency React portal. The front-end is styled with modern neobrutalist widgets that keep information dense yet highly readable.',
     image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuB7ysp8wabxrS-3PJvhawVgwCngJe53MdIGkGvuzKlznyUa-nRriDTvAGq8bdnRQBjx2PgNi8hBoGo5vrA3NMa2p9mcyfrug8gOTN9irRnaNRmKP_ZAaT6NdhYUhQHFsjGHhXlsBDc7aK2VijqVN9RKF4igvaccrVzKFnz3oTARI-Y1hKCgut0OLv420gr8qfMgW4iMVWSBB5jwJBB2Ka9cVZqiytgAfl7aZ_gWP9MsSm3-Wpd3IYpUASobBfS46b1GPoakk0VErqs',
@@ -103,4 +115,3 @@ export const PROJECTS: Project[] = [
     techUsed: ['React', 'TypeScript', 'Tailwind CSS', 'Recharts', 'REST Integrations', 'Vite']
   }
 ];
-

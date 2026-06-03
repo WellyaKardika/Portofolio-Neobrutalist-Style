@@ -35,11 +35,11 @@ export default function Navbar({ isDarkMode, onToggleDarkMode, onNavigate }: Nav
   }, []);
 
   const menuItems = [
-    { label: 'Home', id: 'home', color: 'bg-[#FF90E8]', rotation: 'rotate-[1.5deg]', y: '-translate-y-0.5' },
-    { label: 'About', id: 'about', color: 'bg-[#FFC900]', rotation: 'rotate-[-2.5deg]', y: 'translate-y-0.5' },
-    { label: 'Projects', id: 'projects', color: 'bg-[#38A3A5]', rotation: 'rotate-0', y: 'translate-y-0 text-white' },
-    { label: 'Timeline', id: 'timeline', color: 'bg-white dark:bg-zinc-900', rotation: 'rotate-[1.2deg]', y: '-translate-y-1' },
-    { label: 'Contact', id: 'contact', color: 'bg-[#FF6B6B]', rotation: 'rotate-[-1.8deg]', y: 'translate-y-1' },
+    { label: 'Home', id: 'home', color: 'bg-[#FF90E8]', hoverText: 'hover:text-[#FF90E8]', rotation: 'rotate-[1.5deg]', y: '-translate-y-0.5' },
+    { label: 'About', id: 'about', color: 'bg-[#FFC900]', hoverText: 'hover:text-[#FFC900]', rotation: 'rotate-[-2.5deg]', y: 'translate-y-0.5' },
+    { label: 'Projects', id: 'projects', color: 'bg-[#38A3A5]', hoverText: 'hover:text-[#38A3A5]', rotation: 'rotate-0', y: 'translate-y-0 text-white' },
+    { label: 'Timeline', id: 'timeline', color: 'bg-white dark:bg-zinc-900 dark:text-white', hoverText: 'hover:text-zinc-400 dark:hover:text-zinc-400', rotation: 'rotate-[1.2deg]', y: '-translate-y-1' },
+    { label: 'Contact', id: 'contact', color: 'bg-[#FF6B6B]', hoverText: 'hover:text-[#FF6B6B]', rotation: 'rotate-[-1.8deg]', y: 'translate-y-1' },
   ];
 
   const handleNavigate = (id: string) => {
@@ -51,11 +51,13 @@ export default function Navbar({ isDarkMode, onToggleDarkMode, onNavigate }: Nav
     <>
       {/* 
         HEADER CONTAINER 
-        Using a fixed height approach (h-20 and h-16) to avoid layout reflows caused by padding changes.
-        We also use grid overlap trick for the desktop nav to ensure container width is stable without absolute positioning breaking the layout.
+        Using a fixed header with a layout placeholder to prevent layout shifts 
+        when the header shrinks. This prevents the infinite scroll-flicker bug.
       */}
+      <div className="h-24 w-full shrink-0 invisible pointer-events-none" aria-hidden="true" />
+      
       <header 
-        className={`sticky top-0 z-[100] w-full flex items-center transition-all duration-300 ease-out backdrop-blur-md ${
+        className={`fixed top-0 left-0 right-0 z-[100] w-full flex items-center transition-all duration-300 ease-out backdrop-blur-md ${
           isMenuOpen
             ? 'h-24 bg-transparent border-b-0 shadow-none backdrop-blur-none'
             : isScrolled
@@ -71,10 +73,10 @@ export default function Navbar({ isDarkMode, onToggleDarkMode, onNavigate }: Nav
             className="flex items-center gap-2 group cursor-pointer hover:scale-105 active:scale-95 transition-transform"
           >
             <div className="w-10 h-10 border-4 border-black flex items-center justify-center rounded-lg bg-[#FFC900] font-black font-mono text-lg rotate-[-3deg] brutal-shadow-sm group-hover:rotate-[3deg] transition-transform">
-              RG
+              AE
             </div>
-            <span className={`font-black tracking-tighter uppercase text-black dark:text-white transition-all duration-300 ${isScrolled && !isMenuOpen ? 'text-lg' : 'text-xl'}`}>
-              Rachel Graceya
+            <span className={`mx-3 font-black tracking-tighter uppercase text-black dark:text-white transition-all duration-300 ${isScrolled && !isMenuOpen ? 'text-lg' : 'text-xl'}`}>
+              Asep Ebol
             </span>
           </button>
   
@@ -176,7 +178,7 @@ export default function Navbar({ isDarkMode, onToggleDarkMode, onNavigate }: Nav
                   <button
                     key={item.id}
                     onClick={() => handleNavigate(item.id)}
-                    className="group flex items-baseline gap-4 text-left font-black font-sans text-5xl md:text-7xl uppercase text-black dark:text-white tracking-tighter hover:text-[#FF6B6B] dark:hover:text-[#FFC900] transition-colors w-fit"
+                    className={`group flex items-baseline gap-4 text-left font-black font-sans text-5xl md:text-7xl uppercase text-black dark:text-white tracking-tighter ${item.hoverText} transition-colors w-fit`}
                   >
                     <span className="font-mono text-sm md:text-base text-zinc-400 group-hover:text-black dark:group-hover:text-white transition-colors">
                       0{index + 1}.

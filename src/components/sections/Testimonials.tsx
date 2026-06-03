@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from 'react';
+import { motion } from 'motion/react';
 import { TESTIMONIALS } from '@/data/testimonials';
 
 import { MessageSquare, Star, ArrowLeft, ArrowRight, Quote } from 'lucide-react';
@@ -18,12 +19,16 @@ export default function Testimonials() {
   const current = TESTIMONIALS[currentIndex];
 
   return (
-    <section 
+    <motion.section 
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
       className="py-20 px-4 md:px-8 bg-white dark:bg-zinc-950 border-b-4 border-black dark:border-white relative overflow-hidden transition-colors duration-200"
     >
       {/* Dynamic background shapes */}
-      <div className="absolute top-1/2 -right-16 w-32 h-32 bg-brand-secondary border-4 border-black rounded-xl rotate-45 -z-10 opacity-30"></div>
-      <div className="absolute -bottom-10 left-10 w-40 h-40 bg-brand-primary border-4 border-black rounded-full -z-10 opacity-30"></div>
+      <div className="absolute top-1/2 -right-16 w-32 h-32 bg-brand-secondary border-4 border-black rounded-xl rotate-45 z-0 opacity-30"></div>
+      <div className="absolute -bottom-10 left-10 w-40 h-40 bg-brand-primary border-4 border-black rounded-full z-0 opacity-30"></div>
 
       <div className="max-w-4xl mx-auto text-center relative z-10">
         
@@ -116,8 +121,6 @@ export default function Testimonials() {
         </div>
 
       </div>
-    </section>
+    </motion.section>
   );
 }
-
-

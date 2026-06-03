@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from 'react';
+import { motion } from 'motion/react';
 import { TIMELINE_ITEMS } from '@/data/experience';
 
 import { TimelineItem } from '@/lib/types';
@@ -13,7 +14,11 @@ export default function Experience() {
   };
 
   return (
-    <section 
+    <motion.section 
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
       id="timeline" 
       className="py-20 px-4 md:px-8 bg-zinc-50 dark:bg-zinc-900 border-b-4 border-black dark:border-white transition-colors duration-200"
     >
@@ -110,8 +115,6 @@ export default function Experience() {
           })}
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }
-
-

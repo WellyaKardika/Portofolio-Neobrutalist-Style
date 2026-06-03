@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 import Navbar from '@/components/ui/Navbar';
 import Hero from '@/components/sections/Hero';
 import About from '@/components/sections/About';
@@ -8,14 +9,15 @@ import Projects from '@/components/sections/Projects';
 import Experience from '@/components/sections/Experience';
 import Testimonials from '@/components/sections/Testimonials';
 import Contact from '@/components/sections/Contact';
-import ProjectDetailModal from '@/components/ui/ProjectDetailModal';
-import { Project } from '@/lib/types';
 import { Github, Linkedin, Mail, ArrowUp } from 'lucide-react';
 
 export default function App() {
+  const router = useRouter();
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const [showScrollTop, setShowScrollTop] = useState(false);
 
+  // Mount: read theme + handle scrollTo from sessionStorage (from project detail back button)
   useEffect(() => {
     setMounted(true);
     const saved = localStorage.getItem('theme');
@@ -24,11 +26,19 @@ export default function App() {
     } else {
       setIsDarkMode(document.documentElement.classList.contains('dark'));
     }
-  }, []);
-  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
-  const [showScrollTop, setShowScrollTop] = useState(false);
 
-  // Sync dark class with isDarkMode state automatically
+    // Restore scroll position if coming back from a project detail page
+    const scrollTarget = sessionStorage.getItem('scrollTo');
+    if (scrollTarget) {
+      sessionStorage.removeItem('scrollTo');
+      setTimeout(() => {
+        const element = document.getElementById(scrollTarget);
+        if (element) element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 150);
+    }
+  }, []);
+
+  // Sync dark class with isDarkMode state
   useEffect(() => {
     if (!mounted) return;
     if (isDarkMode) {
@@ -40,23 +50,14 @@ export default function App() {
     }
   }, [isDarkMode, mounted]);
 
-  // Monitor scroll height to show/hide "Scroll to Top" button
+  // Scroll-to-top button visibility
   useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 400) {
-        setShowScrollTop(true);
-      } else {
-        setShowScrollTop(false);
-      }
-    };
-    window.addEventListener('scroll', handleScroll);
+    const handleScroll = () => setShowScrollTop(window.scrollY > 400);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Update HTML class when dark mode state shifts
-  const handleToggleDarkMode = () => {
-    setIsDarkMode((prev) => !prev);
-  };
+  const handleToggleDarkMode = () => setIsDarkMode((prev) => !prev);
 
   const handleNavigate = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -65,38 +66,38 @@ export default function App() {
     }
   };
 
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+
+  if (!mounted) return null;
 
   return (
-    <div className={`min-h-screen flex flex-col font-sans transition-colors duration-200 bg-white dark:bg-zinc-950 text-black dark:text-white selection:bg-brand-primary selection:text-black`}>
-      
-      {/* Navigation Sticky Bar */}
-      <Navbar 
-        isDarkMode={isDarkMode} 
-        onToggleDarkMode={handleToggleDarkMode} 
-        onNavigate={handleNavigate} 
+    <div className="min-h-screen flex flex-col font-sans transition-colors duration-200 bg-white dark:bg-zinc-950 text-black dark:text-white selection:bg-brand-primary selection:text-black">
+
+      {/* Navbar */}
+      <Navbar
+        isDarkMode={isDarkMode}
+        onToggleDarkMode={handleToggleDarkMode}
+        onNavigate={handleNavigate}
       />
 
       {/* Main Sections */}
       <main className="flex-grow">
         <Hero onNavigate={handleNavigate} />
         <About />
-        <Projects onSelectProject={(project) => setSelectedProject(project)} />
+        <Projects />
         <Experience />
         <Testimonials />
         <Contact />
       </main>
 
-      {/* Structured Footer */}
-      <footer className="bg-white dark:bg-zinc-950 border-t-3 border-black dark:border-white py-12 px-4 md:px-8 transition-colors duration-200">
+      {/* Footer */}
+      <footer className="bg-white dark:bg-zinc-950 border-t-4 border-black dark:border-white py-12 px-4 md:px-8 transition-colors duration-200">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="text-center md:text-left space-y-2">
             <h3 className="font-sans font-black text-xl tracking-tight uppercase text-black dark:text-white">
               RACHEL GRACEYA EMANUELLA
             </h3>
-            <p className="text-xs font-bold font-mono text-zinc-550 dark:text-zinc-400">
+            <p className="text-xs font-bold font-mono text-zinc-500 dark:text-zinc-400">
               © {new Date().getFullYear()} Rachel Graceya Emanuella. All rights reserved.
             </p>
           </div>
@@ -115,6 +116,7 @@ export default function App() {
         </div>
       </footer>
 
+      {/* Scroll to Top */}
       {showScrollTop && (
         <button
           onClick={scrollToTop}
@@ -123,12 +125,6 @@ export default function App() {
           <ArrowUp className="w-5 h-5 stroke-[3px]" />
         </button>
       )}
-
-      <ProjectDetailModal 
-        project={selectedProject} 
-        onClose={() => setSelectedProject(null)} 
-      />
-
     </div>
   );
 }

@@ -1,5 +1,6 @@
 "use client";
 import React from 'react';
+import { motion } from 'motion/react';
 import { ArrowRight, Download, Send, CheckCircle2, Award, Briefcase, FileText } from 'lucide-react';
 
 interface HeroProps {
@@ -13,14 +14,17 @@ export default function Hero({ onNavigate }: HeroProps) {
   };
 
   return (
-    <section 
+    <motion.section 
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
       id="home" 
-      className="relative overflow-hidden border-b-4 border-black dark:border-white bg-white dark:bg-zinc-950 pt-12 pb-20 px-4 md:px-8 lg:pt-24 lg:pb-32 transition-colors duration-200"
+      className="relative overflow-hidden border-b-4 border-black dark:border-white bg-white dark:bg-zinc-950 pt-12 pb-20 px-4 md:px-8 lg:pt-12 lg:pb-20 transition-colors duration-200"
     >
       {/* Decorative neobrutalist floating grids/shapes in background */}
-      <div className="absolute top-10 right-10 w-28 h-28 bg-brand-secondary border-4 border-black rounded-full shadow-sm -z-10 animate-bounce" style={{ animationDuration: '4s' }}></div>
-      <div className="absolute bottom-10 left-12 w-36 h-20 bg-brand-primary border-4 border-black rotate-12 -z-10 rounded-lg"></div>
-      <div className="absolute top-1/2 left-1/3 w-12 h-12 bg-brand-tertiary border-4 border-black rounded-full -z-10 animate-pulse"></div>
+      {/* <div className="absolute top-10 right-10 w-28 h-28 bg-brand-secondary border-4 border-black rounded-full shadow-sm z-0 animate-bounce" style={{ animationDuration: '4s' }}></div>
+      <div className="absolute top-1/2 right-32 w-12 h-12 bg-brand-tertiary border-4 border-black rounded-full z-0 animate-pulse"></div> */}
 
       {/* Grid Pattern Mesh */}
       <div className="absolute inset-0 opacity-5 dark:opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(#000000 1.5px, transparent 1.5px)', backgroundSize: '24px 24px' }}></div>
@@ -35,19 +39,19 @@ export default function Hero({ onNavigate }: HeroProps) {
           </div>
 
           <h1 className="text-4xl md:text-6xl font-black font-sans text-black dark:text-white leading-tight tracking-tight uppercase">
-            I'm <br className="hidden md:inline" />Rachel Graceya <br className="hidden md:inline" />
+            I'm <br className="hidden md:inline" />Asep Sukadi <br className="hidden md:inline" />
             <span className="bg-brand-secondary dark:bg-zinc-800 text-black dark:text-brand-secondary border-4 border-black dark:border-brand-secondary px-3 py-1 inline-block transform rotate-1 mt-1 rounded-lg">
-              Emanuella
+              Ebolllll
             </span>
           </h1>
 
           <p className="text-lg md:text-xl font-medium text-zinc-800 dark:text-zinc-300 max-w-2xl leading-relaxed">
             A passionate{' '}
-            <span className="bg-brand-primary border-2 border-dashed border-black px-1.5 py-0.5 rounded-sm font-bold text-black">
+            <span className="bg-brand-primary border-2 border-dashed border-black dark:border-white px-1.5 py-0.5 rounded-sm font-bold text-black">
               Business Analyst
             </span>{' '}
             and{' '}
-            <span className="bg-brand-tertiary border-2 border-dashed border-black px-1.5 py-0.5 rounded-sm font-bold text-white">
+            <span className="bg-brand-tertiary border-2 border-dashed border-black dark:border-white px-1.5 py-0.5 rounded-sm font-bold text-white">
               Business Development
             </span>{' '}
             professional focused on turning complex problems into elegant, fun-damental, and highly performing solutions.
@@ -112,15 +116,15 @@ export default function Hero({ onNavigate }: HeroProps) {
           </div>
 
           {/* Quick Floating Sticker details overlay */}
-          <div className="absolute -bottom-6 -left-6 bg-brand-tertiary text-black px-4 py-2 border-4 border-black rounded-lg font-bold text-xs shadow-md rotate-[-6deg] hidden sm:block">
+          <div className="absolute -bottom-6 -left-6 bg-brand-tertiary text-black dark:text-white dark:border-white px-4 py-2 border-4 border-black dark:border-white rounded-lg font-bold text-xs shadow-md rotate-[-6deg] hidden sm:block">
             📍 Based in Indonesia
           </div>
-          <div className="absolute -top-6 right-2 bg-brand-secondary text-black p-2.5 border-4 border-black rounded-lg shadow-md rotate-[12deg] hidden sm:flex items-center gap-1">
+          <div className="absolute -top-6 right-2 bg-brand-secondary text-black dark:text-white p-2.5 border-4 border-black dark:border-white rounded-lg shadow-md rotate-[12deg] hidden sm:flex items-center gap-1">
             <FileText className="w-4 h-4" /> <span>BA Certified</span>
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }
 

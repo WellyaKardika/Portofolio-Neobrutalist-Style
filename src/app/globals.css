@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=JetBrains+Mono:wght@400;500;700;800&display=swap');
+@import "tailwindcss";
+
+@variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --color-brand-primary: #FFD100;
+  --color-brand-secondary: #FF6B6B;
+  --color-brand-tertiary: #4D4DFF;
+  --color-brand-accent: #00FF41;
+  --color-brand-dark-pink: #E04D4D;
+  --color-brand-dark-blue: #3333E5;
+}
+
+/* Custom transitions and scroll behaviors */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Neobrutalism custom classes for rich interactive feedback */
+.brutal-shadow {
+  box-shadow: 8px 8px 0px 0px #000000;
+}
+
+.dark .brutal-shadow {
+  box-shadow: 8px 8px 0px 0px #ffffff;
+}
+
+.brutal-shadow-lg {
+  box-shadow: 12px 12px 0px 0px #000000;
+}
+
+.dark .brutal-shadow-lg {
+  box-shadow: 12px 12px 0px 0px #ffffff;
+}
+
+.brutal-shadow-sm {
+  box-shadow: 4px 4px 0px 0px #000000;
+}
+
+.dark .brutal-shadow-sm {
+  box-shadow: 4px 4px 0px 0px #ffffff;
+}
+
+/* Active pressed state: elements move to standard flat positions */
+.brutal-pressable:active {
+  transform: translate(3px, 3px);
+  box-shadow: 1px 1px 0px 0px #000000;
+}
+
+.dark .brutal-pressable:active {
+  box-shadow: 1px 1px 0px 0px #ffffff;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #ffffff;
+  border-left: 2px solid #000000;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #121212;
+  border-left: 2px solid #ffffff;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #000000;
+  border: 2px solid #ffffff;
+  border-radius: 6px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #ffffff;
+  border: 2px solid #121212;
+  border-radius: 6px;
+}
+

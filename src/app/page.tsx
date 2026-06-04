@@ -95,10 +95,10 @@ export default function App() {
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="text-center md:text-left space-y-2">
             <h3 className="font-sans font-black text-xl tracking-tight uppercase text-black dark:text-white">
-              RACHEL GRACEYA EMANUELLA
+              ASEP SUKADI EBOLLLLL
             </h3>
             <p className="text-xs font-bold font-mono text-zinc-500 dark:text-zinc-400">
-              © {new Date().getFullYear()} Rachel Graceya Emanuella. All rights reserved.
+              © {new Date().getFullYear()} Asep Sukadi Ebolllll. All rights reserved.
             </p>
           </div>
 

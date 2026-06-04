@@ -41,7 +41,7 @@ export default function Testimonials() {
             Client Testimonials
           </h2>
           <p className="text-sm md:text-base font-medium text-zinc-650 dark:text-zinc-400 mt-2">
-            Read comments from tech executives and project managers describing Rachel's precision.
+            Read comments from tech executives and project managers describing Asep's precision.
           </p>
         </div>
 

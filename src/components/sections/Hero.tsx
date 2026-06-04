@@ -12,7 +12,7 @@ interface HeroProps {
 export default function Hero({ onNavigate }: HeroProps) {
   const handleDownloadResume = () => {
     // Elegant toast trigger or simple alert
-    alert("Resume download simulation initialized! A high-spec PDF file of Rachel Graceya Emanuella's qualifications is preparing for download in a live production environment.");
+    alert("Resume download simulation initialized! A high-spec PDF file of Asep Sukadi Ebolllll's qualifications is preparing for download in a live production environment.");
   };
 
   return (
@@ -42,9 +42,9 @@ export default function Hero({ onNavigate }: HeroProps) {
           </div>
 
           <h1 className="text-4xl md:text-6xl font-black font-sans text-black dark:text-white leading-tight tracking-tight uppercase">
-            I'm <br className="hidden md:inline" />Rachel Graceya<br className="hidden md:inline" />
+            I'm <br className="hidden md:inline" />Asep Sukadi<br className="hidden md:inline" />
             <span className="bg-brand-secondary dark:bg-zinc-800 text-black dark:text-brand-secondary border-4 border-black dark:border-brand-secondary px-3 py-1 inline-block transform rotate-1 mt-1 rounded-lg">
-              Emanuella
+              Ebolllll
             </span>
           </h1>
 
@@ -97,7 +97,7 @@ export default function Hero({ onNavigate }: HeroProps) {
             <div className="relative overflow-hidden border-4 border-black dark:border-white rounded-xl bg-white dark:bg-zinc-900 aspect-square">
               <Image 
                 src={profilePic} 
-                alt="Rachel Graceya Emanuella" 
+                alt="Asep Sukadi Ebolllll" 
                 priority
                 className="w-full h-full object-cover grayscale-25 group-hover:grayscale-0 transition-all duration-300"
               />

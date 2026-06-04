@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Rachel Graceya Emanuella | Business Analyst & Business Development Portfolio",
-  description: "Professional portfolio of Rachel Graceya Emanuella. Bridging detailed enterprise business requirements and high-performance custom React development.",
+  title: "Asep Sukadi Ebolllll | Business Analyst & Business Development Portfolio",
+  description: "Professional portfolio of Asep Sukadi Ebolllll. Bridging detailed enterprise business requirements and high-performance custom React development.",
 };
 
 export default function RootLayout({

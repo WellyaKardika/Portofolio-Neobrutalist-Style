@@ -11,7 +11,7 @@ export const PROJECTS: Project[] = [
     liveUrl: 'https://github.com/WellyaKardika',
     gallery: [],
     description: 'Comprehensive analysis of user journeys leading to a 24% increase in conversion rates through targeted UI/UX interventions.',
-    about: 'A meticulous, data-driven optimization project for a scale-up retail platform. By capturing detailed user clickstream events, custom event tracking, and customer checkout funnels, Rachel identified friction-heavy elements directly within the check-out experience and payment choices.',
+    about: 'A meticulous, data-driven optimization project for a scale-up retail platform. By capturing detailed user clickstream events, custom event tracking, and customer checkout funnels, Asep identified friction-heavy elements directly within the check-out experience and payment choices.',
     image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuA1C0KaXxrgOdFG8KuUDih_tgI6Dsa8zukStirWM804SG9q8-RUms8klItdxWphF9n6XxAh5KHwb0k4mWeEJrrHBGXkk46IIyzm5-bCX9MC19swVNmaLG-Xgc75DrcMsGU5p1ECimE-ohiD2_CQ_MrfetMeA7cRdYgyulQudUPFRie3NtIEkXwiwMzeqAsrZD2CcLUlOOZUSIkCz7wfTU3kk-AebfAQt1m_nXS89v6tFuQVtYh-Olcp0h9Y2t2T4VoxpimNyTYvd7A',
     imageAlt: 'Vivid neobrutalist illustration showing an analytical trend line climbing upwards over a pink backdrop.',
     deliverables: [
@@ -86,7 +86,7 @@ export const PROJECTS: Project[] = [
     liveUrl: 'https://github.com/WellyaKardika',
     gallery: [],
     description: 'Architected and built a custom analytics dashboard to streamline reporting processes for cross-functional teams.',
-    about: 'Faced with multiple disconnected APIs and fragmented team logs, Rachel consolidated metrics into a customized, high-frequency React portal. The front-end is styled with modern neobrutalist widgets that keep information dense yet highly readable.',
+    about: 'Faced with multiple disconnected APIs and fragmented team logs, Asep consolidated metrics into a customized, high-frequency React portal. The front-end is styled with modern neobrutalist widgets that keep information dense yet highly readable.',
     image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuB7ysp8wabxrS-3PJvhawVgwCngJe53MdIGkGvuzKlznyUa-nRriDTvAGq8bdnRQBjx2PgNi8hBoGo5vrA3NMa2p9mcyfrug8gOTN9irRnaNRmKP_ZAaT6NdhYUhQHFsjGHhXlsBDc7aK2VijqVN9RKF4igvaccrVzKFnz3oTARI-Y1hKCgut0OLv420gr8qfMgW4iMVWSBB5jwJBB2Ka9cVZqiytgAfl7aZ_gWP9MsSm3-Wpd3IYpUASobBfS46b1GPoakk0VErqs',
     imageAlt: 'Sticker-style brutalist design illustrating cyan code windows, screen blocks, and high energy contrast.',
     deliverables: [

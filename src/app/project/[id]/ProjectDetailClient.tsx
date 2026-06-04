@@ -561,7 +561,7 @@ export default function ProjectDetailPage({ params }: PageProps) {
       <footer className="border-t-4 border-black dark:border-white py-6 px-4 md:px-8 bg-zinc-50 dark:bg-zinc-950 mt-10">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <p className="text-xs font-black font-mono text-zinc-500 dark:text-zinc-400 uppercase tracking-wider">
-            DESIGN BY: RACHEL GRACEYA
+            DESIGN BY: ASEP SUKADI
           </p>
           <Link
             href="/"

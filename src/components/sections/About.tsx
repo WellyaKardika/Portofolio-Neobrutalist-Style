@@ -99,7 +99,7 @@ export default function About() {
           {/* Core Text Bio */}
           <div className="space-y-6 text-base md:text-lg text-zinc-800 dark:text-zinc-200 leading-relaxed font-medium">
             <p className="border-l-4 border-brand-primary pl-4">
-              Hai, I'm <span className="underline decoration-brand-primary decoration-4 underline-offset-4 font-extrabold text-black dark:text-white">Rachel Graceya Emanuella</span>. I am a Business Analyst and Business Development professional with a passion for building highly functional, clean, and impactful web solutions.
+              Hai, I'm <span className="underline decoration-brand-primary decoration-4 underline-offset-4 font-extrabold text-black dark:text-white">Asep Sukadi Ebolllll</span>. I am a Business Analyst and Business Development professional with a passion for building highly functional, clean, and impactful web solutions.
             </p>
             <p>
               My approach blends rigorous corporate analytical frameworks with creative engineering problem-solving. I thrive in responsive environments where complex metrics meet elegant interfaces, ensuring that every internal reporting system or consumer portal is highly intuitive.

@@ -102,7 +102,7 @@ export default function Contact() {
                     type="text"
                     value={formName}
                     onChange={(e) => setFormName(e.target.value)}
-                    placeholder="E.g. Rachel Graceya"
+                    placeholder="E.g. Asep Sukadi"
                     className="p-3 border-4 border-black dark:border-white bg-[#f9f9f9] dark:bg-zinc-800 text-black dark:text-white rounded-lg shadow-sm font-medium focus:ring-2 focus:ring-brand-primary focus:outline-none"
                     required
                   />
@@ -175,7 +175,7 @@ export default function Contact() {
             <div className="text-center pb-4 border-b-4 border-black border-dashed">
               <CheckCircle className="w-12 h-12 text-green-500 mx-auto mb-2 animate-bounce" />
               <p className="text-base font-black uppercase tracking-widest">TRANSACTION RECEIPT</p>
-              <p className="text-xs font-black text-zinc-500 mt-1">Rachel Graceya Digital Agency</p>
+              <p className="text-xs font-black text-zinc-500 mt-1">Asep Sukadi Digital Agency</p>
             </div>
 
             {/* Receipt Info parameters */}
@@ -221,7 +221,7 @@ export default function Contact() {
             {/* Footer details */}
             <div className="pt-4 border-t-4 border-black border-dashed text-center space-y-4">
               <p className="text-xs font-bold text-zinc-500">
-                ✔️ Handshake complete! Rachel will inspect parameters & execute response dispatch within 24 working hours.
+                ✔️ Handshake complete! Asep will inspect parameters & execute response dispatch within 24 working hours.
               </p>
               
               <button 

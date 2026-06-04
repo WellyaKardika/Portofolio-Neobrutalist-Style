@@ -173,7 +173,7 @@ export default function Projects() {
         {/* View All */}
         {/* <div className="mt-16 text-center">
           <button
-            onClick={() => alert("Rachel's full interactive repository including 15 archived production files is loading directly into our offline state logs.")}
+            onClick={() => alert("Asep's full interactive repository including 15 archived production files is loading directly into our offline state logs.")}
             className="px-8 py-3.5 bg-white dark:bg-zinc-900 border-4 border-black dark:border-white rounded-full font-black text-black dark:text-white hover:bg-brand-primary dark:hover:bg-yellow-400 dark:hover:text-black shadow-md hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-none transition-all flex items-center justify-center gap-2 mx-auto cursor-pointer text-sm"
           >
             Access All Case Files <LayoutGrid className="w-4 h-4" />

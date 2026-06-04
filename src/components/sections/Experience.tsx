@@ -46,7 +46,7 @@ export default function Experience() {
                 
                 {/* Visual Connector Dot */}
                 <div className="absolute -left-[34px] md:-left-[53px] w-6 h-6 rounded-full border-4 border-black bg-brand-primary dark:bg-yellow-400 flex items-center justify-center shadow-sm">
-                  <Briefcase className="w-3.5 h-3.5 text-black" />
+
                 </div>
 
                 {/* Main Experience container box */}

@@ -81,8 +81,15 @@ export default function Projects() {
           </div>
         </div>
 
+        {/* Scroll Indicator */}
+        {filteredProjects.length > 3 && (
+          <div className={`text-xs font-mono font-bold text-zinc-500 uppercase tracking-widest text-center mb-6 items-center justify-center gap-1.5 animate-pulse ${filteredProjects.length > 6 ? 'flex' : 'flex md:hidden'}`}>
+            ↓ Scroll to view more projects ↓
+          </div>
+        )}
+
         {/* Project Grid */}
-        <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-h-[1350px] lg:max-h-[950px] overflow-y-auto px-2 pb-4 pt-2 custom-scrollbar">
           <AnimatePresence mode="popLayout">
             {isFiltering ? (
               // Skeletons

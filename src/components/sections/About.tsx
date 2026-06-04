@@ -72,7 +72,7 @@ export default function About() {
 
       <div className="max-w-4xl mx-auto relative z-10">
         {/* Main Bio Card */}
-        <div className="bg-white dark:bg-zinc-800 border-4 border-black dark:border-white p-6 md:p-12 rounded-xl brutal-shadow rotate-[-1deg] hover:rotate-0 transition-transform duration-300">
+        <div className="bg-white dark:bg-zinc-800 border-4 border-black dark:border-white p-6 md:p-12 rounded-xl brutal-shadow rotate-0 md:rotate-[-1deg] hover:rotate-0 transition-transform duration-300">
           
           {/* Headline Title */}
           <div className="flex items-center gap-4 mb-8 border-b-4 border-black dark:border-white pb-6">
@@ -149,7 +149,7 @@ export default function About() {
         </div>
 
         {/* Dynamic Skill Board */}
-        <div className="mt-16 bg-white dark:bg-zinc-800 border-4 border-black dark:border-white p-6 md:p-8 rounded-xl brutal-shadow transform rotate-[0.5deg]">
+        <div className="mt-16 bg-white dark:bg-zinc-800 border-4 border-black dark:border-white p-6 md:p-8 rounded-xl brutal-shadow transform rotate-0 md:rotate-[0.5deg]">
           
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6 pb-4 border-b-4 border-black dark:border-white">
             <div className="flex items-center gap-3">
@@ -181,7 +181,7 @@ export default function About() {
           </div>
 
           {/* Interactive Skill bars list */}
-          <motion.div layout className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
+          <motion.div layout className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 max-h-[400px] overflow-y-auto pr-2 pb-2">
             <AnimatePresence mode="popLayout">
               {isFiltering ? (
                 // Skeletons

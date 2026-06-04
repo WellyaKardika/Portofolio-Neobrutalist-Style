@@ -170,15 +170,15 @@ export default function Navbar({ isDarkMode, onToggleDarkMode, onNavigate }: Nav
               style={{ backgroundImage: 'radial-gradient(currentColor 2px, transparent 2px)', backgroundSize: '32px 32px' }}
             />
   
-            <div className="max-w-7xl w-full mx-auto px-4 md:px-8 py-8 flex-1 flex flex-col md:flex-row gap-12 relative z-10">
+            <div className="max-w-7xl w-full mx-auto px-4 md:px-8 py-4 md:py-8 flex-1 flex flex-col justify-center md:flex-row gap-8 md:gap-12 relative z-10">
               
               {/* Menu Links */}
-              <div className="flex-1 flex flex-col justify-center gap-6 md:gap-8">
+              <div className="flex-none md:flex-1 flex flex-col justify-center gap-3 md:gap-8">
                 {menuItems.map((item, index) => (
                   <button
                     key={item.id}
                     onClick={() => handleNavigate(item.id)}
-                    className={`group flex items-baseline gap-4 text-left font-black font-sans text-5xl md:text-7xl uppercase text-black dark:text-white tracking-tighter ${item.hoverText} transition-colors w-fit`}
+                    className={`group flex items-baseline gap-2 md:gap-4 text-left font-black font-sans text-5xl sm:text-5xl md:text-7xl uppercase text-black dark:text-white tracking-tighter ${item.hoverText} transition-colors w-fit`}
                   >
                     <span className="font-mono text-sm md:text-base text-zinc-400 group-hover:text-black dark:group-hover:text-white transition-colors">
                       0{index + 1}.
@@ -194,29 +194,31 @@ export default function Navbar({ isDarkMode, onToggleDarkMode, onNavigate }: Nav
               <div className="hidden md:block w-1 bg-black/10 dark:bg-white/10 self-stretch rounded-full" />
   
               {/* Contact Card */}
-              <div className="hidden md:flex flex-1 flex-col justify-center">
-                <div className="bg-white dark:bg-zinc-900 border-4 border-black dark:border-white p-8 md:p-10 rounded-2xl brutal-shadow transform rotate-[1deg] hover:rotate-0 transition-transform">
-                  <span className="inline-block bg-black text-white dark:bg-white dark:text-black font-mono text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-6">
+              <div className="flex flex-none md:flex-1 flex-col justify-center">
+                <div className="bg-white dark:bg-zinc-900 border-4 border-black dark:border-white p-4 md:p-10 rounded-2xl brutal-shadow transform rotate-[1deg] hover:rotate-0 transition-transform">
+                  <span className="inline-block bg-black text-white dark:bg-white dark:text-black font-mono text-[10px] md:text-xs font-bold px-2 py-0.5 md:px-3 md:py-1 rounded-full uppercase tracking-widest mb-3 md:mb-6">
                     Start a Project
                   </span>
-                  <h3 className="text-4xl md:text-6xl font-black font-sans uppercase leading-none text-black dark:text-white mb-8">
+                  <h3 className="text-2xl md:text-6xl font-black font-sans uppercase leading-none text-black dark:text-white mb-3 md:mb-8">
                     Let's Talk!
                   </h3>
                   
-                  <a 
-                    href="mailto:kardikawellya@gmail.com"
-                    className="text-xl md:text-2xl font-black font-mono text-black dark:text-white hover:text-[#FFC900] transition-colors break-all"
-                  >
-                    Rachel@gmail.com
-                  </a>
-                  
-                  <div className="mt-12 flex gap-4">
-                    <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="w-12 h-12 flex items-center justify-center border-2 border-black dark:border-white bg-[#38A3A5] text-white rounded-lg brutal-shadow-sm hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all">
-                      <Linkedin className="w-6 h-6 stroke-[2.5px]" />
+                  <div className="flex flex-row items-center justify-between w-full gap-4 md:gap-6 mt-1 md:mt-4 flex-wrap">
+                    <a 
+                      href="mailto:kardikawellya@gmail.com"
+                      className="text-base md:text-2xl font-black font-mono text-black dark:text-white hover:text-[#FFC900] transition-colors break-all"
+                    >
+                      Rachel@gmail.com
                     </a>
-                    <a href="https://github.com" target="_blank" rel="noreferrer" className="w-12 h-12 flex items-center justify-center border-2 border-black dark:border-white bg-[#FF90E8] text-black rounded-lg brutal-shadow-sm hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all">
-                      <Github className="w-6 h-6 stroke-[2.5px]" />
-                    </a>
+                    
+                    <div className="flex gap-3 md:gap-4">
+                      <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="w-8 h-8 md:w-12 md:h-12 flex items-center justify-center border-2 border-black dark:border-white bg-[#38A3A5] text-white rounded-lg brutal-shadow-sm hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all">
+                        <Linkedin className="w-4 h-4 md:w-6 md:h-6 stroke-[2.5px]" />
+                      </a>
+                      <a href="https://github.com" target="_blank" rel="noreferrer" className="w-8 h-8 md:w-12 md:h-12 flex items-center justify-center border-2 border-black dark:border-white bg-[#FF90E8] text-black rounded-lg brutal-shadow-sm hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all">
+                        <Github className="w-4 h-4 md:w-6 md:h-6 stroke-[2.5px]" />
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>

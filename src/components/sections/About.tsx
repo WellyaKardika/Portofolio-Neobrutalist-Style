@@ -49,6 +49,13 @@ export default function About() {
     ? SKILLS 
     : SKILLS.filter(s => s.category === activeCategory);
 
+  const getSkillLevel = (level: number) => {
+    if (level < 50) return { label: 'Entry', blocks: 1 };
+    if (level < 75) return { label: 'Intermediate', blocks: 2 };
+    if (level < 90) return { label: 'Advanced', blocks: 3 };
+    return { label: 'Expert', blocks: 4 };
+  };
+
   const getCategoryIcon = (cat: 'analysis' | 'development' | 'strategy') => {
     switch(cat) {
       case 'analysis': return <FileSpreadsheet className="w-5 h-5 text-brand-primary shrink-0" />;
@@ -180,6 +187,11 @@ export default function About() {
             </div>
           </div>
 
+          {/* Scroll Indicator */}
+          <div className="text-xs font-mono font-bold text-zinc-500 uppercase tracking-widest text-center mb-4 flex items-center justify-center gap-1.5 animate-pulse">
+            ↓ Scroll to view more skills ↓
+          </div>
+
           {/* Interactive Skill bars list */}
           <motion.div layout className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 max-h-[400px] overflow-y-auto pr-2 pb-2">
             <AnimatePresence mode="popLayout">
@@ -203,7 +215,9 @@ export default function About() {
                 ))
               ) : (
                 // Actual Skills
-                filteredSkills.map((skill, idx) => (
+                filteredSkills.map((skill, idx) => {
+                  const skillLevel = getSkillLevel(skill.level);
+                  return (
                   <motion.div 
                     key={skill.name} 
                     layout
@@ -217,21 +231,33 @@ export default function About() {
                         </span>
                       </div>
                       <span className="font-mono text-xs font-black bg-brand-secondary dark:bg-zinc-800 text-black dark:text-white px-2 py-0.5 border-4 border-black dark:border-zinc-750 rounded-md">
-                        {skill.level}%
+                        {skillLevel.label}
                       </span>
                     </div>
 
                     {/* Progress bar with standard neobrutalist stroke */}
-                    <div className="w-full h-4 bg-white dark:bg-zinc-800 border-4 border-black dark:border-white rounded-full overflow-hidden relative">
-                      <motion.div 
-                        className="h-full bg-brand-primary border-r-4 border-black"
-                        initial={{ width: 0 }}
-                        animate={{ width: `${skill.level}%` }}
-                        transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
-                      ></motion.div>
+                    <div className="w-full h-4 bg-white dark:bg-zinc-800 border-4 border-black dark:border-white rounded-full overflow-hidden flex relative">
+                      {[1, 2, 3, 4].map((blockIndex) => {
+                        const isActive = blockIndex <= skillLevel.blocks;
+                        return (
+                          <div 
+                            key={blockIndex} 
+                            className={`h-full flex-1 ${blockIndex < 4 ? 'border-r-4 border-black dark:border-white' : ''}`}
+                          >
+                            {isActive && (
+                              <motion.div
+                                className="w-full h-full bg-brand-primary"
+                                initial={{ scaleX: 0, originX: 0 }}
+                                animate={{ scaleX: 1 }}
+                                transition={{ duration: 0.4, ease: "easeOut", delay: 0.1 * blockIndex }}
+                              />
+                            )}
+                          </div>
+                        );
+                      })}
                     </div>
                   </motion.div>
-                ))
+                )})
               )}
             </AnimatePresence>
           </motion.div>

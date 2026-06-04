@@ -117,14 +117,14 @@ export default function App() {
       </footer>
 
       {/* Scroll to Top */}
-      {showScrollTop && (
+      {/* {showScrollTop && (
         <button
           onClick={scrollToTop}
           className="fixed bottom-6 right-6 p-3.5 bg-brand-accent dark:bg-zinc-800 text-black dark:text-white border-2 border-black dark:border-white rounded-full shadow-md hover:translate-y-[1.5px] hover:shadow-sm transition-all cursor-pointer z-30 animate-scaleUp"
         >
           <ArrowUp className="w-5 h-5 stroke-[3px]" />
         </button>
-      )}
+      )} */}
     </div>
   );
 }

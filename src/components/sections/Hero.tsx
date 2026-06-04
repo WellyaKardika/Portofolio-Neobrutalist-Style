@@ -73,18 +73,18 @@ export default function Hero({ onNavigate }: HeroProps) {
             </div>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 pt-4">
+          <div className="flex flex-row gap-3 sm:gap-4 pt-4 w-full">
             <button 
               onClick={() => onNavigate('projects')}
-              className="px-8 py-4 bg-brand-primary dark:bg-yellow-400 text-black border-4 border-black rounded-lg text-lg font-black shadow-md hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-sm transition-all flex items-center justify-center gap-2 cursor-pointer"
+              className="flex-1 px-2 sm:px-8 py-3 sm:py-4 bg-brand-primary dark:bg-yellow-400 text-black border-4 border-black rounded-lg text-sm sm:text-lg font-black shadow-md hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-sm transition-all flex items-center justify-center gap-1 sm:gap-2 cursor-pointer whitespace-nowrap"
             >
-              View Projects <ArrowRight className="w-5 h-5" />
+              Projects <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" />
             </button>
             <button 
               onClick={handleDownloadResume}
-              className="px-8 py-4 bg-white dark:bg-zinc-900 text-black dark:text-white border-4 border-black dark:border-white rounded-lg text-lg font-black shadow-md hover:bg-zinc-50 dark:hover:bg-zinc-800 hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-sm transition-all flex items-center justify-center gap-2 cursor-pointer"
+              className="flex-1 px-2 sm:px-8 py-3 sm:py-4 bg-white dark:bg-zinc-900 text-black dark:text-white border-4 border-black dark:border-white rounded-lg text-sm sm:text-lg font-black shadow-md hover:bg-zinc-50 dark:hover:bg-zinc-800 hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-sm transition-all flex items-center justify-center gap-1 sm:gap-2 cursor-pointer whitespace-nowrap"
             >
-              Resume <Download className="w-5 h-5" />
+              Resume <Download className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" />
             </button>
           </div>
         </div>

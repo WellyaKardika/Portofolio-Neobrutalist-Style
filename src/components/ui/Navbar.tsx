@@ -170,7 +170,7 @@ export default function Navbar({ isDarkMode, onToggleDarkMode, onNavigate }: Nav
               style={{ backgroundImage: 'radial-gradient(currentColor 2px, transparent 2px)', backgroundSize: '32px 32px' }}
             />
   
-            <div className="max-w-7xl w-full mx-auto px-4 md:px-8 py-8 flex-1 flex flex-col lg:flex-row gap-12 relative z-10">
+            <div className="max-w-7xl w-full mx-auto px-4 md:px-8 py-8 flex-1 flex flex-col md:flex-row gap-12 relative z-10">
               
               {/* Menu Links */}
               <div className="flex-1 flex flex-col justify-center gap-6 md:gap-8">
@@ -191,10 +191,10 @@ export default function Navbar({ isDarkMode, onToggleDarkMode, onNavigate }: Nav
               </div>
   
               {/* Divider */}
-              <div className="hidden lg:block w-1 bg-black/10 dark:bg-white/10 self-stretch rounded-full" />
+              <div className="hidden md:block w-1 bg-black/10 dark:bg-white/10 self-stretch rounded-full" />
   
               {/* Contact Card */}
-              <div className="flex-1 flex flex-col justify-center">
+              <div className="hidden md:flex flex-1 flex-col justify-center">
                 <div className="bg-white dark:bg-zinc-900 border-4 border-black dark:border-white p-8 md:p-10 rounded-2xl brutal-shadow transform rotate-[1deg] hover:rotate-0 transition-transform">
                   <span className="inline-block bg-black text-white dark:bg-white dark:text-black font-mono text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-6">
                     Start a Project

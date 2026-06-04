@@ -38,7 +38,7 @@ export const STATS: StatItem[] = [
 
 export const SKILLS: SkillItem[] = [
   // Business Analysis
-  { name: 'Process Mapping & Flowcharts', level: 90, category: 'analysis', iconName: 'Workflow' },
+  { name: 'Flowcharts', level: 90, category: 'analysis', iconName: 'Workflow' },
   { name: 'SQL Querying', level: 85, category: 'analysis', iconName: 'Database' },
   { name: 'Excel Financial Modeling', level: 80, category: 'analysis', iconName: 'FileSpreadsheet' },
   { name: 'Requirements Engineering', level: 92, category: 'analysis', iconName: 'FileText' },
@@ -47,9 +47,9 @@ export const SKILLS: SkillItem[] = [
   // Development
   { name: 'React / Vite', level: 88, category: 'development', iconName: 'Code' },
   { name: 'TypeScript', level: 82, category: 'development', iconName: 'Layers' },
-  { name: 'Tailwind CSS Custom Design', level: 95, category: 'development', iconName: 'Palette' },
-  { name: 'ESBuild & Vite Bundlers', level: 75, category: 'development', iconName: 'Zap' },
-  { name: 'REST Web Service APIs', level: 84, category: 'development', iconName: 'Globe' },
+  { name: 'Tailwind CSS', level: 95, category: 'development', iconName: 'Palette' },
+  { name: 'ESBuild', level: 75, category: 'development', iconName: 'Zap' },
+  { name: 'REST APIs', level: 84, category: 'development', iconName: 'Globe' },
   
   // Strategy
   { name: 'Competitor Benchmarking', level: 88, category: 'strategy', iconName: 'TrendingUp' },

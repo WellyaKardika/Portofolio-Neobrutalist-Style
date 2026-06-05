@@ -390,7 +390,7 @@ export default function ProjectDetailPage({ params }: PageProps) {
                 <div className="space-y-0 border-l-4 border-black dark:border-white pl-5 ml-2">
                   {project.methodology.map((m, idx) => (
                     <div key={idx} className="relative pb-5 last:pb-0">
-                      <div className="absolute -left-[29px] top-1.5 w-4 h-4 rounded-full border-4 border-black dark:border-white bg-brand-primary" />
+                      <div className="absolute -left-[30px] top-0.5 w-4 h-4 rounded-full border-4 border-black dark:border-white bg-brand-primary" />
                       <p className="text-sm font-semibold text-zinc-800 dark:text-zinc-200">{m}</p>
                     </div>
                   ))}

@@ -104,16 +104,13 @@ export default function Hero({ onNavigate }: HeroProps) {
             </div>
 
             {/* Availability Badge */}
-            <div className="mt-4 flex justify-between items-center px-1">
-              <span className="font-mono text-xs font-black text-black dark:text-white uppercase tracking-wider">
-                Status:
-              </span>
+            <div className="mt-4 flex justify-end items-center px-1">
               <span className="bg-white dark:bg-zinc-950 text-black dark:text-white px-3 py-1 border-4 border-black dark:border-white rounded-full text-xs font-extrabold flex items-center gap-2 shadow-sm">
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
                 </span>
-                AVAILABLE
+                AVAILABLE FOR FREELANCE
               </span>
             </div>
           </div>

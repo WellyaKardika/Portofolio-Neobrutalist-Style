@@ -21,8 +21,14 @@ interface PageProps {
 }
 
 // ─── Chart Component ─────────────────────────────────────────────────────────
-function ProjectChart({ project }: { project: (typeof PROJECTS)[0] }) {
+function ProjectChart({ project, isDarkMode }: { project: (typeof PROJECTS)[0]; isDarkMode: boolean }) {
   if (!project.chartData) return null;
+
+  const axisColor = isDarkMode ? '#ffffff' : '#000000';
+  const gridColor = isDarkMode ? '#3f3f46' : '#e4e4e7';
+  const tooltipBg = isDarkMode ? '#18181b' : '#ffffff';
+  const tooltipBorder = isDarkMode ? '#ffffff' : '#000000';
+  const tooltipTextColor = isDarkMode ? '#ffffff' : '#000000';
 
   if (project.category === 'analysis') {
     return (
@@ -32,10 +38,10 @@ function ProjectChart({ project }: { project: (typeof PROJECTS)[0] }) {
         </p>
         <ResponsiveContainer width="100%" height="80%">
           <LineChart data={project.chartData}>
-            <CartesianGrid strokeDasharray="3 3" stroke="#e4e4e7" />
-            <XAxis dataKey="name" stroke="#000000" fontSize={11} fontWeight={600} />
-            <YAxis domain={[0, 4]} stroke="#000000" fontSize={11} fontWeight={600} />
-            <ChartTooltip contentStyle={{ backgroundColor: '#fff', border: '4px solid #000', borderRadius: '6px', fontWeight: 'bold' }} />
+            <CartesianGrid strokeDasharray="3 3" stroke={gridColor} />
+            <XAxis dataKey="name" stroke={axisColor} fontSize={11} fontWeight={600} />
+            <YAxis domain={[0, 4]} stroke={axisColor} fontSize={11} fontWeight={600} />
+            <ChartTooltip contentStyle={{ backgroundColor: tooltipBg, border: `4px solid ${tooltipBorder}`, borderRadius: '6px', fontWeight: 'bold', color: tooltipTextColor }} itemStyle={{ color: tooltipTextColor }} labelStyle={{ color: tooltipTextColor }} />
             <Line type="monotone" dataKey="value" stroke="#4D4DFF" strokeWidth={4} name="Current Rate" activeDot={{ r: 8 }} />
             <Line type="monotone" dataKey="benchmark" stroke="#FF6B6B" strokeWidth={3} strokeDasharray="4 4" name="Baseline" />
           </LineChart>
@@ -53,11 +59,11 @@ function ProjectChart({ project }: { project: (typeof PROJECTS)[0] }) {
         </p>
         <ResponsiveContainer width="100%" height="80%">
           <BarChart data={project.chartData}>
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="name" stroke="#000000" fontSize={11} fontWeight={600} />
-            <YAxis stroke="#000000" fontSize={11} fontWeight={600} />
-            <ChartTooltip contentStyle={{ backgroundColor: '#fff', border: '4px solid #000', borderRadius: '6px' }} />
-            <Bar dataKey="value" radius={[4, 4, 0, 0]} stroke="#000000" strokeWidth={2}>
+            <CartesianGrid strokeDasharray="3 3" stroke={gridColor} />
+            <XAxis dataKey="name" stroke={axisColor} fontSize={11} fontWeight={600} />
+            <YAxis stroke={axisColor} fontSize={11} fontWeight={600} />
+            <ChartTooltip contentStyle={{ backgroundColor: tooltipBg, border: `4px solid ${tooltipBorder}`, borderRadius: '6px', color: tooltipTextColor }} itemStyle={{ color: tooltipTextColor }} labelStyle={{ color: tooltipTextColor }} />
+            <Bar dataKey="value" radius={[4, 4, 0, 0]} stroke={axisColor} strokeWidth={2}>
               {project.chartData.map((_, index) => (
                 <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
               ))}
@@ -76,11 +82,11 @@ function ProjectChart({ project }: { project: (typeof PROJECTS)[0] }) {
         </p>
         <ResponsiveContainer width="100%" height="80%">
           <BarChart data={project.chartData}>
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="name" stroke="#000000" fontSize={11} fontWeight={600} />
-            <YAxis stroke="#000000" fontSize={11} fontWeight={600} />
-            <ChartTooltip contentStyle={{ backgroundColor: '#fff', border: '4px solid #000', borderRadius: '6px' }} />
-            <Bar dataKey="value" fill="#4D4DFF" stroke="#000000" strokeWidth={3} radius={[4, 4, 0, 0]} />
+            <CartesianGrid strokeDasharray="3 3" stroke={gridColor} />
+            <XAxis dataKey="name" stroke={axisColor} fontSize={11} fontWeight={600} />
+            <YAxis stroke={axisColor} fontSize={11} fontWeight={600} />
+            <ChartTooltip contentStyle={{ backgroundColor: tooltipBg, border: `4px solid ${tooltipBorder}`, borderRadius: '6px', color: tooltipTextColor }} itemStyle={{ color: tooltipTextColor }} labelStyle={{ color: tooltipTextColor }} />
+            <Bar dataKey="value" fill="#4D4DFF" stroke={axisColor} strokeWidth={3} radius={[4, 4, 0, 0]} />
           </BarChart>
         </ResponsiveContainer>
       </div>
@@ -357,7 +363,7 @@ export default function ProjectDetailPage({ params }: PageProps) {
                 <h2 className="flex items-center gap-2 text-sm font-black font-mono uppercase tracking-widest text-black dark:text-white mb-4 border-l-4 border-brand-tertiary pl-3">
                   <BarChart3 className="w-4 h-4" /> Analytics Visualization
                 </h2>
-                <ProjectChart project={project} />
+                <ProjectChart project={project} isDarkMode={isDarkMode} />
               </div>
             )}
           </div>

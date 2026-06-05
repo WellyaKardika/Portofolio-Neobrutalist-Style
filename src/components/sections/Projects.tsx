@@ -89,7 +89,7 @@ export default function Projects() {
         )}
 
         {/* Project Grid */}
-        <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-h-[1350px] lg:max-h-[950px] overflow-y-auto px-2 pb-4 pt-2 custom-scrollbar">
+        <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-h-[1450px] lg:max-h-[950px] overflow-y-auto px-2 pb-6 pt-2 custom-scrollbar">
           <AnimatePresence mode="popLayout">
             {isFiltering ? (
               // Skeletons

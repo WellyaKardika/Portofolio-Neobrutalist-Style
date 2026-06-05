@@ -261,7 +261,7 @@ export default function ProjectDetailPage({ params }: PageProps) {
               href={project.liveUrl}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 border-4 border-black dark:border-white bg-black dark:bg-white text-white dark:text-black font-black font-mono text-sm uppercase tracking-wider rounded-xl brutal-shadow hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all shrink-0"
+              className="inline-flex items-center gap-2 px-6 py-3 border-4 border-white dark:border-black bg-black dark:bg-white text-white dark:text-black font-black font-mono text-sm uppercase tracking-wider rounded-xl brutal-shadow hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all shrink-0"
             >
               View Project <ExternalLink className="w-4 h-4 stroke-[3px]" />
             </a>
@@ -526,32 +526,32 @@ export default function ProjectDetailPage({ params }: PageProps) {
         </AnimatePresence>
 
         {/* ── Next / Prev Project ──────────────────────────── */}
-        <div className="border-t-4 border-black dark:border-white pt-10 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6">
+        <div className="border-t-4 border-black dark:border-white pt-8 sm:pt-10 grid grid-cols-2 gap-4 sm:gap-6 w-full">
           {/* Prev */}
           <Link
             href={`/project/${prevProject.id}`}
-            className="group flex items-center gap-3 cursor-pointer"
+            className="group flex items-center gap-2 sm:gap-8 cursor-pointer justify-start overflow-hidden"
           >
-            <div className="w-11 h-11 border-4 border-black dark:border-white bg-white dark:bg-zinc-800 rounded-xl brutal-shadow-sm flex items-center justify-center group-hover:bg-brand-primary transition-colors">
-              <ArrowLeft className="w-5 h-5 stroke-[3px] text-black dark:text-white group-hover:text-black transition-colors" />
+            <div className="shrink-0 w-10 h-10 sm:w-11 sm:h-11 border-4 border-black dark:border-white bg-white dark:bg-zinc-800 rounded-xl flex items-center justify-center group-hover:bg-brand-primary transition-colors">
+              <ArrowLeft className="w-4 h-4 sm:w-5 sm:h-5 stroke-[3px] text-black dark:text-white group-hover:text-black transition-colors" />
             </div>
-            <div>
-              <p className="text-[10px] font-black font-mono uppercase tracking-widest text-zinc-400">Previous</p>
-              <p className="font-black font-sans text-base text-black dark:text-white group-hover:underline">{prevProject.title}</p>
+            <div className="min-w-0 flex-1">
+              <p className="text-[9px] sm:text-[10px] font-black font-mono uppercase tracking-widest text-zinc-400 truncate">Prev</p>
+              <p className="font-black font-sans text-xs sm:text-base text-black dark:text-white group-hover:underline truncate">{prevProject.title}</p>
             </div>
           </Link>
 
           {/* Next */}
           <Link
             href={`/project/${nextProject.id}`}
-            className="group flex items-center gap-3 cursor-pointer text-right sm:flex-row-reverse"
+            className="group flex items-center gap-2 sm:gap-3 cursor-pointer justify-start flex-row-reverse text-right overflow-hidden"
           >
-            <div className="w-11 h-11 border-4 border-black dark:border-white bg-white dark:bg-zinc-800 rounded-xl brutal-shadow-sm flex items-center justify-center group-hover:bg-brand-secondary transition-colors">
-              <ArrowRight className="w-5 h-5 stroke-[3px] text-black dark:text-white group-hover:text-black transition-colors" />
+            <div className="shrink-0 w-10 h-10 sm:w-11 sm:h-11 border-4 border-black dark:border-white bg-white dark:bg-zinc-800 rounded-xl flex items-center justify-center group-hover:bg-brand-secondary transition-colors">
+              <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 stroke-[3px] text-black dark:text-white group-hover:text-black transition-colors" />
             </div>
-            <div>
-              <p className="text-[10px] font-black font-mono uppercase tracking-widest text-zinc-400">Next Project</p>
-              <p className="font-black font-sans text-base text-black dark:text-white group-hover:underline">{nextProject.title}</p>
+            <div className="min-w-0 flex-1">
+              <p className="text-[9px] sm:text-[10px] font-black font-mono uppercase tracking-widest text-zinc-400 truncate">Next</p>
+              <p className="font-black font-sans text-xs sm:text-base text-black dark:text-white group-hover:underline truncate">{nextProject.title}</p>
             </div>
           </Link>
         </div>
